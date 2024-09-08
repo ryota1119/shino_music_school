@@ -1,0 +1,58 @@
+---
+import Wrapper from "./Wrapper.astro";
+---
+
+<Wrapper collor="bg-light-gray" title="Gallery">
+    <div class="gallery">
+        <div id="js-splide" class="splide">
+            <div class="splide__track">
+                <div class="splide__list">
+                    <div class="splide__slide">
+                        <img src="/images/slideImages/slideImage01.JPG" alt=""/>
+                    </div>
+                    <div class="splide__slide">
+                        <img src="/images/slideImages/slideImage02.JPG" alt=""/>
+                    </div>
+                    <div class="splide__slide">
+                        <img src="/images/slideImages/slideImage03.JPG" alt=""/>
+                    </div>
+                    <div class="splide__slide">
+                        <img src="/images/slideImages/slideImage04.JPG" alt=""/>
+                    </div>
+                    <div class="splide__slide">
+                        <img src="/images/slideImages/slideImage05.JPG" alt=""/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</Wrapper>
+
+<script>
+    import {Splide} from '@splidejs/splide';
+    import {AutoScroll} from '@splidejs/splide-extension-auto-scroll';
+    import '@splidejs/splide/css/core';
+
+    const splide = new Splide(".gallery .splide", {
+        type: 'loop',
+        drag: false,
+        arrows: false,
+        pagination: false,
+        gap: 16,
+        fixedWidth: '20rem',
+        autoScroll: { // 自動スクロール設定
+            speed: 0.5, //スクロールの速度
+            pauseOnHover: false, // マウスホバー時に一時停止するかの設定
+            pauseOnFocus: false, // フォーカス時に一時停止するかの設定
+        },
+        breakpoints: {
+            768: {
+                perPage: 1,
+                fixedWidth: '8rem',
+            },
+        }
+    }).mount({AutoScroll});
+</script>
+
+<style>
+</style>

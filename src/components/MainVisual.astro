@@ -1,0 +1,10 @@
+---
+interface Props {
+    src: string;
+}
+
+const { src } = Astro.props;
+---
+<div class="w-full">
+    <img src={src} class="h-auto"/>
+</div>

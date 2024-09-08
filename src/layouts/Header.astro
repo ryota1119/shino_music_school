@@ -1,0 +1,15 @@
+---
+import HeaderMenu from '@components/HeaderMenu.astro'
+import HeaderLogo from '@icons/ShinoharaMusicSchool.svg';
+---
+
+<div class="fixed top-0 left-0 right-0 z-50 px-4 md:px-8 bg-white">
+    <header class="flex justify-between py-4 md:py-4">
+        <div>
+            <a href="/" class="" aria-label="logo">
+                <img src={HeaderLogo.src} alt="logo"/>
+            </a>
+        </div>
+        <HeaderMenu/>
+    </header>
+</div>

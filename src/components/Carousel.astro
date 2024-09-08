@@ -1,0 +1,53 @@
+---
+import {Image} from 'astro:assets';
+---
+<div class="main_visual">
+    <div id="js-splide" class="splide">
+        <div class="splide__track">
+            <div class="splide__list">
+                <div class="splide__slide">
+                    <img src="/images/slideImages/slideImage01.JPG" alt=""/>
+                </div>
+                <div class="splide__slide">
+                    <img src="/images/slideImages/slideImage02.JPG" alt=""/>
+                </div>
+                <div class="splide__slide">
+                    <img src="/images/slideImages/slideImage03.JPG" alt=""/>
+                </div>
+                <div class="splide__slide">
+                    <img src="/images/slideImages/slideImage04.JPG" alt=""/>
+                </div>
+                <div class="splide__slide">
+                    <img src="/images/slideImages/slideImage05.JPG" alt=""/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    import Splide from '@splidejs/splide';
+    import '@splidejs/splide/css/core';
+
+    const splide = new Splide(".main_visual .splide", {
+        autoplay: true,
+        type: "fade",
+        rewind: true,
+        pauseOnHover: false,
+        pauseOnFocus: false,
+        interval: 8000,
+        speed: 3000,
+        pagination: false,
+        arrows: false,
+    }).mount();
+</script>
+
+<style lang="scss">
+  .splide_main_visual {
+    /* スライドのサイズ調整 */
+    .splide__slide img {
+      height: auto;
+      width: 100%;
+    }
+  }
+</style>

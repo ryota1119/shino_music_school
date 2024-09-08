@@ -1,0 +1,8 @@
+/* カスタムフォントファミリーを登録し、ブラウザにその場所を知らせます。 */
+@font-face {
+    font-family: 'AURORA-Regular';
+    src: url('../../public/fonts/AURORA-Regular.otf') format('otf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

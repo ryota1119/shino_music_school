@@ -1,0 +1,27 @@
+---
+import "the-new-css-reset";
+import ContactButton from '@components/ContactButton.astro';
+import Header from '@layouts/Header.astro';
+import Footer from '@layouts/Footer.astro';
+interface Props {
+    title: string;
+}
+
+const {title} = Astro.props;
+---
+
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="description" content="Astro description"/>
+    <meta name="viewport" content="width=device-width"/>
+    <meta name="generator" content={Astro.generator}/>
+    <title>{title}</title>
+</head>
+<body class="font-sans">
+<Header/>
+<ContactButton/>
+<slot/>
+</body>
+</html>
