@@ -1,4 +1,6 @@
 ---
+import ContentsTitle from '@components/ContentsTitle.astro'
+
 interface Props {
     collor: string
     title?: string
@@ -10,9 +12,7 @@ const title = Astro.props.title
 <div class={collor}>
     <div class="max-w-5xl mx-auto px-4 py-8 sm:px-6 sm:py-10 lg:px-8 lg:py-16">
         {title &&
-                <div class="py-5">
-                    <h2 class="text-center font-bold font-aurora text-base md:text-h3">{title}</h2>
-                </div>
+                <ContentsTitle title={title}/>
         }
         <slot/>
     </div>
