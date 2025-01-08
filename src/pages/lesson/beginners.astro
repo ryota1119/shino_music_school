@@ -1,17 +1,18 @@
 ---
-import Layout from '@layouts/Layout.astro';
-import FAQsContents from "../layouts/FAQsContents.astro";
+import Layout from '../../layouts/Layout.astro';
+import LessonBeginnersContents from "../../layouts/LessonBeginnersContents.astro";
 import {Picture} from "astro:assets";
-import visualImageSrc from "@visualImages/FAQ.png"
+import AccessMap from "../../layouts/AccessMap.astro";
+import visualImageSrc from "@visualImages/for_beginners.png"
 
-const pageTitle = "FAQ";
+const pageTitle = "初めての方へ";
 ---
 
-<Layout title="FAQ | しのはら音楽教室">
+<Layout title="Lesson Program | しのはら音楽教室">
     <div class="relative">
         <Picture src={visualImageSrc} alt={pageTitle} width={visualImageSrc.width} height={visualImageSrc.height}
                  class="w-full object-cover mt-[65px] h-[248px] md:h-[480px]"/>
         <h1 class="text-white text-3xl md:text-5xl absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2">{pageTitle}</h1>
     </div>
-    <FAQsContents/>
+    <LessonBeginnersContents/>
 </Layout>

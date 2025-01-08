@@ -1,0 +1,41 @@
+---
+
+---
+<div id="js-splide" class="splide">
+    <div class="splide__track">
+        <div class="splide__list">
+            <div class="splide__slide">
+                <img src="/images/slideImages/slideImage01.JPG" alt="" class="lg:w-full lg:h-screen"/>
+            </div>
+            <div class="splide__slide">
+                <img src="/images/slideImages/slideImage02.JPG" alt="" class="lg:w-full lg:h-screen"/>
+            </div>
+            <div class="splide__slide">
+                <img src="/images/slideImages/slideImage03.JPG" alt="" class="lg:w-full lg:h-screen"/>
+            </div>
+            <div class="splide__slide">
+                <img src="/images/slideImages/slideImage04.JPG" alt="" class="lg:w-full lg:h-screen"/>
+            </div>
+            <div class="splide__slide">
+                <img src="/images/slideImages/slideImage05.JPG" alt="" class="lg:w-full lg:h-screen"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    import Splide from '@splidejs/splide';
+    import '@splidejs/splide/css/core';
+
+    const splide = new Splide(".main_visual .splide", {
+        autoplay: true,
+        type: "fade",
+        rewind: true,
+        pauseOnHover: false,
+        pauseOnFocus: false,
+        interval: 8000,
+        speed: 3000,
+        pagination: false,
+        arrows: false,
+    }).mount();
+</script>

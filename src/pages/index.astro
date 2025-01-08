@@ -1,16 +1,18 @@
 ---
-import Layout from '@layouts/Layout.astro';
+import TopLayout from '@layouts/TopLayout.astro';
+import FirstView from '@layouts/FirstView.astro';
+import Gallery from '@layouts/Gallery.astro';
+import Message from "@layouts/Message.astro";
 import AccessMap from '@layouts/AccessMap.astro';
-import Carousel from '@components/Carousel.astro';
-import Gallery from '../layouts/Gallery.astro';
 import Footer from "../layouts/Footer.astro";
-import Wrapper from '@layouts/Wrapper.astro';
-import Message from "../layouts/Message.astro";
 ---
 
-<Layout title="しのはら音楽教室">
-    <Carousel/>
-    <Gallery/>
-    <Message/>
-    <AccessMap/>
-</Layout>
+<TopLayout title="しのはら音楽教室">
+        <FirstView/>
+        <div class="lg:relative lg:z-1 lg:top-100vh">
+            <Gallery bgColor="bg-light-gray"/>
+            <Message bgColor="bg-white"/>
+            <AccessMap bgColor="bg-light-gray"/>
+            <Footer bgColor="bg-white"/>
+        </div>
+</TopLayout>

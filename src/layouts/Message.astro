@@ -1,8 +1,14 @@
 ---
 import Wrapper from "./Wrapper.astro";
+
+interface Props {
+    bgColor: string,
+}
+
+const bgColor = Astro.props.bgColor;
 ---
 
-<Wrapper collor="bg-white" title="Message">
+<Wrapper collor={bgColor} title="Message">
     <div class="mt-10 md:flex md:flex-row-reverse gap-10">
         <div class="mb-10 md:row-span-2">
             <img src="/images/profile.png" alt="" class="rounded-full"/>

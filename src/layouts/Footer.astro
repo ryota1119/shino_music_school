@@ -1,15 +1,12 @@
 ---
+interface Props {
+    bgColor: string,
+}
 
+const bgColor = Astro.props.bgColor;
 ---
-<footer class="footer">
-    Copyright © 2024 shino-music.com All Rights Reserved.
+<footer class={bgColor}>
+    <p class="text-[10px] text-center py-4 text-gray">
+        Copyright © 2024 shino-music.com All Rights Reserved.
+    </p>
 </footer>
-
-<style>
-    .footer {
-        font-size: 10px;
-        color: #616161;
-        text-align: center;
-        padding: 20px;
-    }
-</style>
