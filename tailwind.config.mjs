@@ -4,12 +4,6 @@ import defaultTheme from 'tailwindcss/defaultTheme'
 export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
-		colors: {
-			white: '#FFFFFF',
-			black: '#111111',
-			gray: '#616161',
-			'light-gray': '#F2F2F2',
-		},
 		fontSize: {
 			xs: ["0.75rem", { lineHeight: "1rem", letterSpacing: "0.03em" }],
 			sm: ["0.875rem", { lineHeight: "1.25rem", letterSpacing: "0.03em" }],
@@ -34,6 +28,12 @@ export default {
 			fontFamily: {
 				aurora: ["AURORA-Regular"],
 				sans: ['Inter', ...defaultTheme.fontFamily.sans],
+			},
+			colors: {
+				'white': '#FFFFFF',
+				'black': '#111111',
+				'gray': '#616161',
+				'light-gray': '#F2F2F2',
 			},
 		},
 	},

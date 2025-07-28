@@ -7,20 +7,90 @@ import AccessMap from "./AccessMap.astro";
 
 interface Props {
     title: string;
+    description?: string;
+    image?: string;
+    canonicalURL?: string;
+    breadcrumbs?: Array<{name: string, url: string}>;
 }
 
-const {title} = Astro.props;
+const {
+    title,
+    description = "しのはら音楽教室は、一人一人の目標に合わせたレッスンを提供する福岡市長住の音楽教室です。",
+    image = "/images/ogp.jpg",
+    canonicalURL = Astro.url.href,
+    breadcrumbs = []
+} = Astro.props;
+
+const siteUrl = 'https://shino-music.com';
 ---
 
 <!doctype html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8"/>
-    <meta name="description" content="Astro description"/>
     <meta name="viewport" content="width=device-width"/>
     <meta name="generator" content={Astro.generator}/>
     <link rel="icon" href="/icons/favicon.svg"/>
     <title>{title}</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content={description}/>
+    <meta name="keywords" content="音楽教室,ピアノ,ギター,ドラム,レッスン,しのはら音楽教室,音楽レッスン,初心者,上級者,個人レッスン,グループレッスン,ジュニアレッスン,ジュニアレッスン,出張レッスン,福岡市,長住,南区,福岡,音楽教室 福岡,音楽教室 長住"/>
+    <meta name="author" content="しのはら音楽教室"/>
+    <link rel="canonical" href={canonicalURL}/>
+
+    <!-- OGP -->
+    <meta property="og:title" content={title}/>
+    <meta property="og:description" content={description}/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content={canonicalURL}/>
+    <meta property="og:image" content={new URL(image, Astro.url)}/>
+    <meta property="og:site_name" content="しのはら音楽教室"/>
+    <meta property="og:locale" content="ja_JP"/>
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content={title}/>
+    <meta name="twitter:description" content={description}/>
+    <meta name="twitter:image" content={new URL(image, Astro.url)}/>
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "MusicSchool",
+            "name": "しのはら音楽教室",
+            "description": description,
+            "url": canonicalURL,
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "JP"
+            },
+            "offers": {
+                "@type": "Offer",
+                "availability": "https://schema.org/InStock",
+                "priceCurrency": "JPY"
+            },
+            "sameAs": [
+                "https://www.instagram.com/shino_m.studio"
+            ]
+        }
+    </script>
+
+    {breadcrumbs.length > 0 && (
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": breadcrumbs.map((item, index) => ({
+                    "@type": "ListItem",
+                    "position": index + 1,
+                    "name": item.name,
+                    "item": `${siteUrl}${item.url}`
+                }))
+            }
+        </script>
+    )}
 </head>
 <body class="font-sans">
 <Header/>

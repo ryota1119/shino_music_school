@@ -1,0 +1,355 @@
+---
+import Wrapper from './Wrapper.astro';
+---
+
+<Wrapper collor="bg-white">
+  <div class="w-full max-w-2xl mx-auto px-4">
+    <!-- 説明文 -->
+    <div class="mb-8">
+      <p class="text-black mb-2">
+        しのはら音楽教室へのお問い合わせはこちらからお気軽にご連絡ください。<br />
+        体験レッスンや料金についてなど、何でもご相談ください。
+      </p>
+      <p class="text-red-500 text-sm flex justify-end">* マークは必須です。</p>
+    </div>
+
+    <form id="contactForm" class="space-y-6">
+      <div class="grid grid-cols-2 gap-4">
+        <!-- 性 -->
+        <div>
+          <label class="block text-gray text-sm font-bold mb-2" for="last-name">
+            苗字 <span class="text-red-500">*</span>
+          </label>
+          <input
+            id="last-name"
+            name="last-name"
+            type="text"
+            class="text-gray focus:bg-light-gray ring-1 ring-light-gray shadow appearance-none rounded w-full py-2 px-3 leading-tight"
+            required
+          />
+          <div class="field-error text-red-500 text-sm mt-1 hidden" data-field="last-name"></div>
+        </div>
+        <!-- 名 -->
+        <div>
+          <label class="block text-gray text-sm font-bold mb-2" for="first-name">
+            名 <span class="text-red-500">*</span>
+          </label>
+          <input
+            id="first-name"
+            name="first-name"
+            type="text"
+            class="text-gray focus:bg-light-gray ring-1 ring-light-gray shadow appearance-none rounded w-full py-2 px-3 leading-tight"
+            required
+          />
+          <div class="field-error text-red-500 text-sm mt-1 hidden" data-field="first-name"></div>
+        </div>
+      </div>
+      <!-- ご住所 -->
+      <div>
+        <label class="block text-gray text-sm font-bold mb-2" for="address">
+          ご住所 <span class="text-red-500">*</span>
+        </label>
+        <input
+          id="address"
+          name="address"
+          type="text"
+          class="text-gray focus:bg-light-gray ring-1 ring-light-gray shadow appearance-none rounded w-full py-2 px-3 leading-tight"
+          required
+        />
+        <div class="field-error text-red-500 text-sm mt-1 hidden" data-field="address"></div>
+      </div>
+
+      <!-- メールアドレス -->
+      <div>
+        <label class="block text-gray text-sm font-bold mb-2" for="email">
+          メールアドレス <span class="text-red-500">*</span>
+        </label>
+        <input
+          id="email"
+          type="email"
+          name="email"
+          class="text-gray focus:bg-light-gray ring-1 ring-light-gray shadow appearance-none rounded w-full py-2 px-3 leading-tight"
+          required
+        />
+        <div class="field-error text-red-500 text-sm mt-1 hidden" data-field="email"></div>
+      </div>
+
+      <!-- 電話番号 -->
+      <div>
+        <label class="block text-gray text-sm font-bold mb-2" for="phone"> 電話番号 </label>
+        <input
+          id="phone"
+          type="tel"
+          name="phone"
+          class="text-gray focus:bg-light-gray ring-1 ring-light-gray shadow appearance-none rounded w-full py-2 px-3 leading-tight"
+          required
+        />
+        <div class="field-error text-red-500 text-sm mt-1 hidden" data-field="phone"></div>
+      </div>
+
+      <!-- お問い合わせ内容 -->
+      <div>
+        <label class="block text-gray text-sm font-bold mb-2">
+          お問い合わせについて <span class="text-red-500">*</span>
+        </label>
+        <div class="space-y-2">
+          <label class="flex items-center">
+            <input
+              type="checkbox"
+              name="inquiry"
+              value="trial"
+              class="mr-2 w-4 h-4 text-gray bg-light-gray ring-1 ring-gray rounded focus:ring-gray checked:bg-gray checked:ring-gray checked:text-white"
+            />
+            <span class="text-sm text-gray">体験レッスンを検討中</span>
+          </label>
+          <label class="flex items-center">
+            <input
+              type="checkbox"
+              name="inquiry"
+              value="price"
+              class="mr-2 w-4 h-4 text-gray bg-light-gray ring-1 ring-gray rounded focus:ring-gray checked:bg-gray checked:ring-gray checked:text-white"
+            />
+            <span class="text-sm text-gray">料金について詳しく知りたい</span>
+          </label>
+          <label class="flex items-center">
+            <input
+              type="checkbox"
+              name="inquiry"
+              value="schedule"
+              class="mr-2 w-4 h-4 text-gray bg-light-gray ring-1 ring-gray rounded focus:ring-gray checked:bg-gray checked:ring-gray checked:text-white"
+            />
+            <span class="text-sm text-gray">レッスンスケジュールについて</span>
+          </label>
+          <label class="flex items-center">
+            <input
+              type="checkbox"
+              name="inquiry"
+              value="other"
+              class="mr-2 w-4 h-4 text-gray bg-light-gray ring-1 ring-gray rounded focus:ring-gray checked:bg-gray checked:ring-gray checked:text-white"
+            />
+            <span class="text-sm text-gray">その他</span>
+          </label>
+        </div>
+        <div class="field-error text-red-500 text-sm mt-1 hidden" data-field="inquiry"></div>
+      </div>
+
+      <!-- ご質問・ご要望 -->
+      <div>
+        <label class="block text-gray text-sm font-bold mb-2" for="message"> ご質問・ご要望 </label>
+        <textarea
+          id="message"
+          name="message"
+          rows="6"
+          class="text-gray ring-1 ring-light-gray shadow appearance-none rounded w-full py-2 px-3 leading-tight focus:bg-light-gray"
+          placeholder="ご質問やご要望などご記入ください"></textarea>
+      </div>
+
+      <!-- 送信ボタン -->
+      <div class="flex justify-center">
+        <button
+          type="button"
+          id="submitButton"
+          class="ring-1 ring-light-gray bg-light-gray text-gray hover:bg-gray hover:text-white font-bold py-2 px-8 rounded cursor-pointer transition-all duration-300 ease-in-out"
+        >
+          送信
+        </button>
+      </div>
+    </form>
+
+    <style>
+      /* チェックボックスのチェックマークを表示 */
+      input[type='checkbox']:checked {
+        background-image: url('/icons/check.svg');
+        background-size: 16px;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    </style>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const submitButton = document.getElementById('submitButton');
+        const form = document.getElementById('contactForm') as HTMLFormElement;
+
+        if (!form || !submitButton) return;
+
+        // 各フィールドにblurイベントリスナーを追加
+        const inputFields = form.querySelectorAll('input, textarea');
+        inputFields.forEach(function (field) {
+          field.addEventListener('blur', function () {
+            validateField(field as HTMLInputElement | HTMLTextAreaElement);
+          });
+        });
+
+        // チェックボックスにもchangeイベントリスナーを追加
+        const checkboxes = form.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(function (checkbox) {
+          checkbox.addEventListener('change', function () {
+            validateCheckboxes();
+          });
+        });
+
+        // 個別フィールドのバリデーション
+        function validateField(field: HTMLInputElement | HTMLTextAreaElement) {
+          const fieldName = field.name;
+          const value = field.value.trim();
+
+          // エラーをクリア
+          clearFieldError(fieldName);
+          field.classList.remove('ring-red-500');
+
+          // 必須項目チェック
+          if (isRequiredField(fieldName) && !value) {
+            showFieldError(fieldName, getFieldLabel(fieldName) + 'は必須です');
+            field.classList.add('ring-red-500');
+            return false;
+          }
+
+          // メールアドレス形式チェック
+          if (fieldName === 'email' && value) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(value)) {
+              showFieldError(fieldName, 'メールアドレスの形式が正しくありません');
+              field.classList.add('ring-red-500');
+              return false;
+            }
+          }
+
+          return true;
+        }
+
+        // チェックボックスのバリデーション
+        function validateCheckboxes() {
+          const inquiryCheckboxes = form.querySelectorAll('input[name="inquiry"]:checked');
+          clearFieldError('inquiry');
+
+          if (inquiryCheckboxes.length === 0) {
+            showFieldError('inquiry', 'お問い合わせ内容を選択してください');
+            return false;
+          }
+          return true;
+        }
+
+        // フィールドエラーを表示
+        function showFieldError(fieldName: string, message: string) {
+          const errorElement = form.querySelector('[data-field="' + fieldName + '"]');
+          if (errorElement) {
+            errorElement.textContent = message;
+            errorElement.classList.remove('hidden');
+          }
+        }
+
+        // フィールドエラーをクリア
+        function clearFieldError(fieldName: string) {
+          const errorElement = form.querySelector('[data-field="' + fieldName + '"]');
+          if (errorElement) {
+            errorElement.textContent = '';
+            errorElement.classList.add('hidden');
+          }
+        }
+
+        // 必須フィールドかどうかを判定
+        function isRequiredField(fieldName: string): boolean {
+          const requiredFields = ['last-name', 'first-name', 'address', 'email'];
+          return requiredFields.includes(fieldName);
+        }
+
+        // フィールド名からラベルを取得
+        function getFieldLabel(fieldName: string): string {
+          const labels: { [key: string]: string } = {
+            'last-name': '苗字',
+            'first-name': '名',
+            address: 'ご住所',
+            email: 'メールアドレス',
+            phone: '電話番号',
+            inquiry: 'お問い合わせ内容',
+          };
+          return labels[fieldName] || fieldName;
+        }
+
+        // 送信ボタンのクリックイベント
+        submitButton.addEventListener('click', function () {
+          // 全フィールドのバリデーションを実行
+          let isValid = true;
+
+          // 入力フィールドのバリデーション
+          const inputFields = form.querySelectorAll('input, textarea');
+          inputFields.forEach(function (field) {
+            if (!validateField(field as HTMLInputElement | HTMLTextAreaElement)) {
+              isValid = false;
+            }
+          });
+
+          // チェックボックスのバリデーション
+          if (!validateCheckboxes()) {
+            isValid = false;
+          }
+
+          if (!isValid) {
+            return; // バリデーションエラーの場合は送信しない
+          }
+
+          const formData = new FormData(form);
+
+          // フォームデータを取得
+          const lastName = formData.get('last-name') || '';
+          const firstName = formData.get('first-name') || '';
+          const address = formData.get('address') || '';
+          const email = formData.get('email') || '';
+          const phone = formData.get('phone') || '';
+
+          // チェックボックスの値を取得（複数選択対応）
+          const inquiryCheckboxes = form.querySelectorAll(
+            'input[name="inquiry"]:checked'
+          ) as NodeListOf<HTMLInputElement>;
+          const inquiryValues = Array.from(inquiryCheckboxes).map(function (cb) {
+            // チェックボックスの親要素（label）からテキストを取得
+            const label = cb.closest('label');
+            const textElement = label?.querySelector('span');
+            return textElement?.textContent || cb.value;
+          });
+          const inquiry = inquiryValues.length > 0 ? inquiryValues.join('\n') : '';
+
+          const message = formData.get('message') || '';
+
+          // メール本文を作成
+          const subject = '【お問い合わせ】しのはら音楽教室';
+          const body =
+            'しのはら音楽教室サイトからの以下のお問い合わせがありました。\n\n' +
+            '---\n' +
+            'お問い合わせ内容\n\n' +
+            '【お名前】\n' +
+            lastName +
+            ' ' +
+            firstName +
+            '\n\n' +
+            '【ご住所】\n' +
+            address +
+            '\n\n' +
+            '【メールアドレス】\n' +
+            email +
+            '\n\n' +
+            '【電話番号】\n' +
+            phone +
+            '\n\n' +
+            '【お問い合わせ内容】\n' +
+            inquiry +
+            '\n\n' +
+            '【ご質問・ご要望】\n' +
+            message +
+            '\n\n' +
+            '---\n' +
+            'このメールはしのはら音楽教室のウェブサイトから送信されました。\n\n';
+
+          // mailtoリンクを作成して実行
+          const mailtoLink =
+            'mailto:pocoapoco_cresc.tomo@icloud.com?subject=' +
+            encodeURIComponent(subject) +
+            '&body=' +
+            encodeURIComponent(body);
+          window.location.href = mailtoLink;
+        });
+      });
+    </script>
+  </div>
+</Wrapper>

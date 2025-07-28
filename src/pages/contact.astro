@@ -1,13 +1,13 @@
 ---
 import Layout from '@layouts/Layout.astro';
-import AboutContents from '@layouts/AboutContents.astro';
+import ContactContents from '@layouts/ContactContents.astro';
 
-const pageTitle = 'About';
+const pageTitle = 'Contact';
 const description =
   'しのはら音楽教室の講師紹介。福岡市長住で20年以上の指導経験を持つ講師が、一人一人の目標に合わせた丁寧なレッスンを提供。ピアノ、ギター、ドラムの専門講師が在籍。';
 ---
 
-<Layout title="About | しのはら音楽教室" description={description}>
+<Layout title="Contact | しのはら音楽教室" description={description}>
   <div class="relative">
     <img
       src="/images/mainVisuals/about.png"
@@ -20,5 +20,5 @@ const description =
       {pageTitle}
     </h1>
   </div>
-  <AboutContents />
+  <ContactContents />
 </Layout>
